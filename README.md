@@ -72,3 +72,12 @@ export default defineConfig([
 ])
 ```
 # budget-tracker
+
+## Autenticación (demo local)
+
+- Ruta pública: `/login`
+- Ruta protegida: `/` (Dashboard)
+- El acceso al dashboard solo se permite con sesión autenticada.
+- Credenciales demo:
+  - Correo: `demo@budget.com`
+  - Contraseña: `123456`
