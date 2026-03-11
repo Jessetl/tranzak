@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { AuthContext } from '@/presentation/contexts/AuthContext';
 import type { AuthUser, LoginCredentials } from '@/domain/entities/Auth';
 import type { AuthRepository } from '@/core/contracts/AuthRepository';
@@ -11,17 +11,19 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({
   children,
-  authRepository = new LocalStorageAuthRepository(),
+  authRepository,
 }) => {
-  const [user, setUser] = useState<AuthUser | null>(null);
+  const repository = useMemo<AuthRepository>(
+    () => authRepository ?? new LocalStorageAuthRepository(),
+    [authRepository],
+  );
 
-  useEffect(() => {
-    const authenticatedUser = authRepository.getAuthenticatedUser();
-    setUser(authenticatedUser);
-  }, [authRepository]);
+  const [user, setUser] = useState<AuthUser | null>(() =>
+    repository.getAuthenticatedUser(),
+  );
 
   const login = (credentials: LoginCredentials): boolean => {
-    const authenticatedUser = authRepository.signIn(credentials);
+    const authenticatedUser = repository.signIn(credentials);
 
     if (!authenticatedUser) {
       return false;
@@ -32,7 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({
   };
 
   const logout = (): void => {
-    authRepository.signOut();
+    repository.signOut();
     setUser(null);
   };
 

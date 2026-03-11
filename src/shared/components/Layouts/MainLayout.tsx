@@ -12,15 +12,16 @@ const MainLayout: React.FC<MainLayoutProps> = ({
   footer,
   fullScreen = false,
 }) => {
-  const wrapperClass = fullScreen
-    ? 'flex min-h-screen w-full bg-gray-50 dark:bg-gray-900'
-    : 'flex flex-col w-full max-w-[450px] min-h-screen m-auto p-4 bg-gray-50 dark:bg-gray-900';
+  const wrapperClass =
+    'flex min-h-screen w-full justify-center bg-gray-50 dark:bg-gray-900';
 
   const contentClass = fullScreen
-    ? 'flex min-h-screen w-full flex-col'
-    : 'flex flex-col flex-1 gap-2';
+    ? 'flex min-h-screen w-full max-w-sm flex-col'
+    : 'flex min-h-screen w-full max-w-sm flex-col gap-2 p-4';
 
-  const mainClass = fullScreen ? 'flex-1 overflow-hidden' : 'flex-1 overflow-auto px-2 py-4';
+  const mainClass = fullScreen
+    ? 'flex-1 overflow-y-auto'
+    : 'flex-1 overflow-y-auto px-2 pt-4';
 
   return (
     <div className={wrapperClass}>

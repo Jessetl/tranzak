@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '@/presentation/contexts/ThemeContext';
 import type { ThemeMode } from '@/domain/entities/Theme';
 import type { ThemeRepository } from '@/core/contracts/ThemeRepository';
@@ -13,17 +13,16 @@ interface ThemeProviderProps {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   defaultTheme = 'light',
-  themeRepository = new LocalStorageThemeRepository(),
+  themeRepository,
 }) => {
-  const [theme, setTheme] = useState<ThemeMode>(defaultTheme);
+  const repository = useMemo<ThemeRepository>(
+    () => themeRepository ?? new LocalStorageThemeRepository(),
+    [themeRepository],
+  );
 
-  // Inicializar tema desde el repositorio
-  useEffect(() => {
-    const savedTheme = themeRepository.getThemeMode();
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, [themeRepository]);
+  const [theme, setTheme] = useState<ThemeMode>(
+    () => repository.getThemeMode() ?? defaultTheme,
+  );
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -37,8 +36,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     root.classList.toggle('dark', isDark);
     body.classList.toggle('dark', isDark);
 
-    themeRepository.setThemeMode(theme);
-  }, [theme, themeRepository]);
+    repository.setThemeMode(theme);
+  }, [theme, repository]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
