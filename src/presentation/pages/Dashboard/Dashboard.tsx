@@ -9,7 +9,7 @@ const Dashboard = (): React.JSX.Element => {
     <section className='relative min-h-screen overflow-hidden bg-white'>
       <div
         aria-hidden='true'
-        className='absolute inset-x-0 top-0 h-56 border-b border-[#2a4760] bg-[#102940] rounded-br-4xl rounded-bl-4xl'
+        className='absolute inset-x-0 top-0 h-56 rounded-bl-4xl rounded-br-4xl border-b border-brand-navy-light bg-brand-navy'
       />
 
       <div className='relative z-10 mx-auto min-h-screen w-full max-w-sm px-5 pb-8'>

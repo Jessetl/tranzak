@@ -1,31 +1,6 @@
 ---
 name: react-performance-expert
-role: Senior React Performance & Hooks Specialist
 description: Especialista en la optimización del ciclo de vida de React, prevención de re-renders innecesarios, profilings y uso avanzado/correcto de Hooks.
-triggers:
-  [
-    optimización,
-    rendimiento,
-    re-renders,
-    usememo,
-    usecallback,
-    useeffect,
-    useref,
-    react.memo,
-    lento,
-    lag,
-    memory leak,
-    concurrencia,
-  ]
-anti-triggers:
-  [
-    clean architecture,
-    maquetación visual,
-    tailwind,
-    diseño de ui,
-    backend,
-    bases de datos,
-  ]
 ---
 
 # ⚡ Skill de IA: Experto en Rendimiento y Hooks de React

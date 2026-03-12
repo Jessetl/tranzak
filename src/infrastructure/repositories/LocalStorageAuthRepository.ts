@@ -1,4 +1,4 @@
-import type { AuthRepository } from '@/core/contracts/AuthRepository';
+import type { AuthRepository } from '@/domain/contracts/AuthRepository';
 import type { AuthUser, LoginCredentials } from '@/domain/entities/Auth';
 
 export class LocalStorageAuthRepository implements AuthRepository {

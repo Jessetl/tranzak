@@ -1,5 +1,5 @@
 import type { ThemeMode } from '@/domain/entities/Theme';
-import type { ThemeRepository } from '@/core/contracts/ThemeRepository';
+import type { ThemeRepository } from '@/domain/contracts/ThemeRepository';
 
 export class LocalStorageThemeRepository implements ThemeRepository {
   private readonly STORAGE_KEY = 'app_theme_mode';

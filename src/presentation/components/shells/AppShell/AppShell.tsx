@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from '../../../router/Router';
-import MainLayout from '@/shared/components/Layouts/MainLayout';
+import MainLayout from '@/presentation/components/layouts/MainLayout';
 
 const AppShell = (): React.JSX.Element => {
   return (

@@ -12,7 +12,7 @@ const AppShellFooter = (): React.JSX.Element => {
       <button
         type='button'
         aria-label='Agregar'
-        className='absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#2EA67A] text-white shadow-[0_12px_24px_-12px_rgba(46,166,122,0.8)] transition hover:brightness-105'
+        className='absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-accent text-white shadow-[0_12px_24px_-12px_rgba(46,166,122,0.8)] transition hover:bg-brand-accent-dark'
       >
         <PlusIcon className='h-7 w-7' />
       </button>
@@ -20,7 +20,7 @@ const AppShellFooter = (): React.JSX.Element => {
       <nav className='grid grid-cols-5 items-stretch pb-3 text-[11px] font-medium text-gray-500'>
         <button
           type='button'
-          className='flex h-full flex-col items-center gap-1 border-t-2 border-[#2EA67A] pb-1 pt-3 text-gray-700'
+          className='flex h-full flex-col items-center gap-1 border-t-2 border-brand-accent pb-1 pt-3 text-gray-700'
         >
           <HomeIcon className='h-5 w-5' />
           Dashboard
@@ -28,7 +28,7 @@ const AppShellFooter = (): React.JSX.Element => {
 
         <button
           type='button'
-          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-[#2EA67A]'
+          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-brand-accent'
         >
           <ChartBarIcon className='h-5 w-5' />
           Reportes
@@ -41,7 +41,7 @@ const AppShellFooter = (): React.JSX.Element => {
 
         <button
           type='button'
-          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-[#2EA67A]'
+          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-brand-accent'
         >
           <WalletIcon className='h-5 w-5' />
           Presupuesto
@@ -49,7 +49,7 @@ const AppShellFooter = (): React.JSX.Element => {
 
         <button
           type='button'
-          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-[#2EA67A]'
+          className='flex h-full flex-col items-center gap-1 border-t-2 border-transparent pb-1 pt-3 transition hover:border-brand-accent'
         >
           <UserCircleIcon className='h-5 w-5' />
           Perfil

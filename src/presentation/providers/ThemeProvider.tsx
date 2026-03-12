@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '@/presentation/contexts/ThemeContext';
 import type { ThemeMode } from '@/domain/entities/Theme';
-import type { ThemeRepository } from '@/core/contracts/ThemeRepository';
+import type { ThemeRepository } from '@/domain/contracts/ThemeRepository';
 import { LocalStorageThemeRepository } from '@/infrastructure/repositories/LocalStorageThemeRepository';
 
 interface ThemeProviderProps {

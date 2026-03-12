@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { AuthContext } from '@/presentation/contexts/AuthContext';
 import type { AuthUser, LoginCredentials } from '@/domain/entities/Auth';
-import type { AuthRepository } from '@/core/contracts/AuthRepository';
+import type { AuthRepository } from '@/domain/contracts/AuthRepository';
 import { LocalStorageAuthRepository } from '@/infrastructure/repositories/LocalStorageAuthRepository';
 
 interface AuthProviderProps {
